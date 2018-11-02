@@ -1,0 +1,16 @@
+{
+    "name": "aiolo/moto-club-back-end",
+    "description": "API para o pojeto motoClub",
+    "authors": [{
+        "name": "rdfenix",
+        "email": "rhoodsk8erboy@gmail.com"
+    }],
+    "require": {
+        "slim/slim": "~2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "ApiMotoClub\\": "vendor\\moto-club\\phpClasses\\src"
+        }
+    }
+}
