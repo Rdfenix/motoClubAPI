@@ -72,10 +72,15 @@
                 );
             } else {
                 
-                return array(
+                $user[0]["status"] = 302;
+                $user[0]["msg"] = "Usuario Encontrado";
+
+                return $user[0];
+
+                /*return array(
                     "status" => 302,
                     "msg" => "Usuario Encontrado"
-                );
+                );*/
             }
         }
 
