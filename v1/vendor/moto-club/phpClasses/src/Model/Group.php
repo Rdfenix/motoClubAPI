@@ -47,6 +47,13 @@
             }
         }
 
+        public function getAllGroups()
+        {
+            $sql = new Sql();
+            $result = $sql->SELECT("SELECT * FROM grupo ORDER BY dt_cadastro DESC");
+            return $result;
+        }
+
     }
 
 ?>

@@ -8,6 +8,7 @@
     use \Slim\Slim\Http\Response;
     use \ApiMotoClub\Model\User;
     use \ApiMotoClub\Model\Group;
+    use \ApiMotoClub\Model\EventUser;
 
     $app = new Slim();
 
@@ -47,6 +48,28 @@
         $result = json_decode($response);
         $group->setData($result);
         $data = $group->registerGroup();
+        echo json_encode($data);
+    });
+
+    $app->get("/grupo/list", function(){
+        $group = new Group();
+        $result = $group->getAllGroups();
+        echo json_encode($result);
+    });
+
+    $app->post("/evento/register", function(){
+        $event = new EventUser();
+        $request = Slim::getInstance()->request();
+        $response = $request->getBody();
+        $result = json_decode($response);
+        $event->setData($result);
+        $data = $event->registerEvent();
+        echo json_encode($data);
+    });
+
+    $app->get("/evento/list", function(){
+        $event = new EventUser();
+        $data = $event->getAllEvents();
         echo json_encode($data);
     });
 
